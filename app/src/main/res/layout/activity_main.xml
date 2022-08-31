@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="18dp"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/stopwatch_view"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_marginBottom="253dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="00.00.00"
+        android:foregroundGravity="center"
+        android:textSize="70dp" />
+
+    <ScrollView
+        android:id="@+id/lapView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/stopwatch_view"
+        android:layout_marginBottom="6dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <Button
+            android:id="@+id/btn_start"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="0sp"
+            android:layout_height="88dp"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:background="@drawable/btn_start_status"
+            android:onClick="onStart"
+            android:text="Start"
+            android:textSize="22dp"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_hold"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="0sp"
+            android:layout_height="88dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_reset_status"
+            android:enabled="false"
+            android:onClick="onHold"
+            android:text="Hold"
+            android:textSize="22dp"
+            android:textColor="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+</RelativeLayout>
